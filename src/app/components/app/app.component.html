@@ -1,7 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<header></header>
+<mat-spinner *ngIf="!isChartLoaded" id="loader"></mat-spinner>
 <plotly-chart 
   [data]="plotlyData" 
   [layout]="plotlyLayout" 
   [options]="plotlyOptions" 
-  [displayRawData]="true">
+  [displayRawData]="false">
 </plotly-chart>
+
+<div *ngIf="isChartLoaded" id="operators-div">
+  <button mat-button (click)="setLinearReggressionForFuze()" matTooltip="Fuze">
+    <span class="image" style="background-image: url('../../../assets/fuze-icon.png')"></span>
+  </button>
+  <button mat-button (click)="setLinearReggressionForValkyrie()" matTooltip="Valkyrie">
+    <span class="image" style="background-image: url('../../../assets/valk-icon.png')"></span>
+  </button>
+  <button mat-button (click)="setLinearReggressionForMira()" matTooltip="Mira">
+    <span class="image" style="background-image: url('../../../assets/mira-icon.png')"></span>
+  </button>
+  <button mat-button (click)="setLinearReggressionForCaveira()" matTooltip="Caveira">
+    <span class="image" style="background-image: url('../../../assets/caveira-icon.png')"></span>
+  </button>
+</div>

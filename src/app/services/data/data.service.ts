@@ -1,16 +1,20 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/Rx';
 
 @Injectable()
 export class DataService {
-  data: any;
+  private data: Observable<any>;
 
-  constructor(private http: HttpClient) { 
-    this.loadData();
-  }
+  constructor(private http: HttpClient) { }
 
-  loadData() {
-    this.http.get('assets/r6siege-data.json').subscribe(data => this.data = data);
+  getData(): Observable<any> {
+    if (!this.data) {
+      this.data = this.http.get('assets/r6siege-data.json').publishLast().refCount();
+    } 
+    return this.data;
   }
 
 }

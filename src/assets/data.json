@@ -1,0 +1,692 @@
+[
+	{ 
+		"id": 0,
+		"townName": "Bolesławiec",
+		"priceOfAnApartment": 2550,
+		"population": 39167
+	},
+	{ 
+		"id": 1,
+		"townName": "Dzierżoniów",
+		"priceOfAnApartment": 2504,
+		"population": 33787
+	},
+	{
+		"id": 2,
+		"townName": "Głogów",
+		"priceOfAnApartment": 3200,
+		"population": 68292
+	},
+	{
+		"id": 3,
+		"townName": "Jelenia Góra",
+		"priceOfAnApartment": 3050,
+		"population": 80524
+	},
+	{
+		"id": 4,
+		"townName": "Legnica",
+		"priceOfAnApartment": 2952,
+		"population": 100718
+	},
+	{
+		"id": 5,
+		"townName": "Oleśnica",
+		"priceOfAnApartment": 3857,
+		"population": 37366
+	},
+	{
+		"id": 6,
+		"townName": "Oława",
+		"priceOfAnApartment": 3600,
+		"population": 32773
+	},
+	{
+		"id": 7,
+		"townName": "Świdnica",
+		"priceOfAnApartment": 3000,
+		"population": 57959
+	},
+	{
+		"id": 8,
+		"townName": "Wrocław",
+		"priceOfAnApartment": 5763,
+		"population": 637683
+	},
+	{
+		"id": 9,
+		"townName": "Brodnica",
+		"priceOfAnApartment": 2920,
+		"population": 28625
+	},
+	{
+		"id": 10,
+		"townName": "Bydgoszcz",
+		"priceOfAnApartment": 3860,
+		"population": 353938
+	},
+	{
+		"id": 11,
+		"townName": "Chełmża",
+		"priceOfAnApartment": 2450,
+		"population": 14769
+	},
+	{
+		"id": 12,
+		"townName": "Chełmża",
+		"priceOfAnApartment": 2450,
+		"population": 14769
+	},
+	{
+		"id": 13,
+		"townName": "Grudziądz",
+		"priceOfAnApartment": 2450,
+		"population": 95964
+	},
+	{
+		"id": 14,
+		"townName": "Inowrocław",
+		"priceOfAnApartment": 3100,
+		"population": 73968
+	},
+	{
+		"id": 15,
+		"townName": "Solec Kujawski",
+		"priceOfAnApartment": 3153,
+		"population": 15660
+	},
+	{
+		"id": 16,
+		"townName": "Świecie",
+		"priceOfAnApartment": 2880,
+		"population": 25974
+	},
+	{
+		"id": 17,
+		"townName": "Toruń",
+		"priceOfAnApartment": 4320,
+		"population": 202521
+	},
+	{
+		"id": 18,
+		"townName": "Włocławek",
+		"priceOfAnApartment": 2808,
+		"population": 112483
+	},
+	{
+		"id": 19,
+		"townName": "Chełm",
+		"priceOfAnApartment": 2700,
+		"population": 63734
+	},
+	{
+		"id": 20,
+		"townName": "Krasnystaw",
+		"priceOfAnApartment": 2909,
+		"population": 18980
+	},
+	{
+		"id": 21,
+		"townName": "Kraśnik",
+		"priceOfAnApartment": 2800,
+		"population": 34985
+	},
+	{
+		"id": 22,
+		"townName": "Lublin",
+		"priceOfAnApartment": 4837,
+		"population": 340466
+	},
+	{
+		"id": 23,
+		"townName": "Łęczna",
+		"priceOfAnApartment": 3590,
+		"population": 19300
+	},
+	{
+		"id": 24,
+		"townName": "Łuków",
+		"priceOfAnApartment": 3400,
+		"population": 30413
+	},
+	{
+		"id": 25,
+		"townName": "Puławy",
+		"priceOfAnApartment": 3720,
+		"population": 48408
+	},
+	{
+		"id": 26,
+		"townName": "Gorzów Wlkp.",
+		"priceOfAnApartment": 2912,
+		"population": 123995
+	},
+	{
+		"id": 27,
+		"townName": "Krosno Odrzanśki",
+		"priceOfAnApartment": 2250,
+		"population": 11606
+	},
+	{
+		"id": 28,
+		"townName": "Miedzyrzec",
+		"priceOfAnApartment": 2257,
+		"population": 17003
+	},
+	{
+		"id": 29,
+		"townName": "Nowa Sól",
+		"priceOfAnApartment": 2605,
+		"population": 39258
+	},
+	{
+		"id": 30,
+		"townName": "Świebodzin",
+		"priceOfAnApartment": 2550,
+		"population": 22010
+	},
+	{
+		"id": 31,
+		"townName": "Zielona Góra",
+		"priceOfAnApartment": 3440,
+		"population": 139330
+	},
+	{
+		"id": 32,
+		"townName": "Żagań",
+		"priceOfAnApartment": 2103,
+		"population": 26188
+	},
+	{
+		"id": 33,
+		"townName": "Żary",
+		"priceOfAnApartment": 2400,
+		"population": 38048
+	},
+	{
+		"id": 34,
+		"townName": "Aleksandrów Łódzki",
+		"priceOfAnApartment": 3103,
+		"population": 21380
+	},
+	{
+		"id": 35,
+		"townName": "Bełchatów",
+		"priceOfAnApartment": 2650,
+		"population": 58326
+	},
+	{
+		"id": 36,
+		"townName": "Łódź",
+		"priceOfAnApartment": 3818,
+		"population": 696503
+	},
+	{
+		"id": 37,
+		"townName": "Pabianice",
+		"priceOfAnApartment": 3007,
+		"population": 66265
+	},
+	{
+		"id": 38,
+		"townName": "Piotrków Tryb.",
+		"priceOfAnApartment": 3050,
+		"population": 74694
+	},
+	{
+		"id": 39,
+		"townName": "Radomsko",
+		"priceOfAnApartment": 3000,
+		"population": 46583
+	},
+	{
+		"id": 40,
+		"townName": "Sieradz",
+		"priceOfAnApartment": 2650,
+		"population": 42762
+	},
+	{
+		"id": 41,
+		"townName": "Skierniewice",
+		"priceOfAnApartment": 3557,
+		"population": 48327
+	},
+	{
+		"id": 42,
+		"townName": "Tomaszów Maz.",
+		"priceOfAnApartment": 2900,
+		"population": 63601
+	},
+	{
+		"id": 43,
+		"townName": "Tomaszów Maz.",
+		"priceOfAnApartment": 2900,
+		"population": 63601
+	},
+	{
+		"id": 44,
+		"townName": "Wieluń",
+		"priceOfAnApartment": 2950,
+		"population": 22973
+	},
+	{
+		"id": 45,
+		"townName": "Zduńska Wola",
+		"priceOfAnApartment": 2750,
+		"population": 42698
+	},
+	{
+		"id": 46,
+		"townName": "Zgierz",
+		"priceOfAnApartment": 3250,
+		"population": 56929
+	},
+	{
+		"id": 47,
+		"townName": "Chrzanów",
+		"priceOfAnApartment": 2905,
+		"population": 37291
+	},
+	{
+		"id": 48,
+		"townName": "Bochnia",
+		"priceOfAnApartment": 4710,
+		"population": 30048
+	},
+	{
+		"id": 49,
+		"townName": "Brzesko",
+		"priceOfAnApartment": 4110,
+		"population": 16959
+	},
+	{
+		"id": 50,
+		"townName": "Gorlice",
+		"priceOfAnApartment": 3100,
+		"population": 27903
+	},
+	{
+		"id": 51,
+		"townName": "Kraków",
+		"priceOfAnApartment": 6831,
+		"population": 765320
+	},
+	{
+		"id": 52,
+		"townName": "Limanowa",
+		"priceOfAnApartment": 3205,
+		"population": 15138
+	},
+	{
+		"id": 53,
+		"townName": "Myślenice",
+		"priceOfAnApartment": 4350,
+		"population": 18412
+	},
+	{
+		"id": 54,
+		"townName": "Nowy Sącz",
+		"priceOfAnApartment": 3400,
+		"population": 83993
+	},
+	{
+		"id": 55,
+		"townName": "Nowy Targ",
+		"priceOfAnApartment": 4302,
+		"population": 33412
+	},
+	{
+		"id": 56,
+		"townName": "Olkusz",
+		"priceOfAnApartment": 3000,
+		"population": 36122
+	},
+	{
+		"id": 57,
+		"townName": "Oświęcim",
+		"priceOfAnApartment": 3000,
+		"population": 38972
+	},
+	{
+		"id": 58,
+		"townName": "Rabka",
+		"priceOfAnApartment": 3980,
+		"population": 12925
+	},
+	{
+		"id": 59,
+		"townName": "Skawina",
+		"priceOfAnApartment": 4100,
+		"population": 24317
+	},
+	{
+		"id": 60,
+		"townName": "Tarnów",
+		"priceOfAnApartment": 3408,
+		"population": 110110
+	},
+	{
+		"id": 61,
+		"townName": "Zakopane",
+		"priceOfAnApartment": 9520,
+		"population": 27305
+	},
+	{
+		"id": 62,
+		"townName": "Będzin",
+		"priceOfAnApartment": 2810,
+		"population": 57555
+	},
+	{
+		"id": 63,
+		"townName": "Bielsko Biała",
+		"priceOfAnApartment": 3640,
+		"population": 172030
+	},
+	{
+		"id": 64,
+		"townName": "Bytom",
+		"priceOfAnApartment": 2252,
+		"population": 169617
+	},
+	{
+		"id": 65,
+		"townName": "Chorzów",
+		"priceOfAnApartment": 2950,
+		"population": 109398
+	},
+	{
+		"id": 66,
+		"townName": "Cieszyn",
+		"priceOfAnApartment": 3000,
+		"population": 35102
+	},
+	{
+		"id": 67,
+		"townName": "Częstochowa",
+		"priceOfAnApartment": 3252,
+		"population": 226225
+	},
+	{
+		"id": 68,
+		"townName": "Częstochowa",
+		"priceOfAnApartment": 3252,
+		"population": 226225
+	},
+	{
+		"id": 69,
+		"townName": "Dąbrowa Górnicza",
+		"priceOfAnApartment": 2950,
+		"population": 121802
+	},
+	{
+		"id": 70,
+		"townName": "Gliwice",
+		"priceOfAnApartment": 3380,
+		"population": 182156
+	},
+	{
+		"id": 71,
+		"townName": "Jastrzębie-Zdrój",
+		"priceOfAnApartment": 2606,
+		"population": 89883
+	},
+	{
+		"id": 72,
+		"townName": "Jaworzno",
+		"priceOfAnApartment": 3100,
+		"population": 92473
+	},
+	{
+		"id": 73,
+		"townName": "Katowice",
+		"priceOfAnApartment": 3896,
+		"population": 298111
+	},
+	{
+		"id": 74,
+		"townName": "Lubliniec",
+		"priceOfAnApartment": 2620,
+		"population": 23975
+	},
+	{
+		"id": 75,
+		"townName": "Mysłowice",
+		"priceOfAnApartment": 3000,
+		"population": 74592
+	},
+	{
+		"id": 76,
+		"townName": "Myszków",
+		"priceOfAnApartment": 2307,
+		"population": 32157
+	},
+	{
+		"id": 77,
+		"townName": "Piekary Śląskie",
+		"priceOfAnApartment": 2600,
+		"population": 55954
+	},
+	{
+		"id": 78,
+		"townName": "Racibórz",
+		"priceOfAnApartment": 2305,
+		"population": 55404
+	},
+	{
+		"id": 79,
+		"townName": "Rybnik",
+		"priceOfAnApartment": 2850,
+		"population": 139252
+	},
+	{
+		"id": 80,
+		"townName": "Siemianowice Śl.",
+		"priceOfAnApartment": 2968,
+		"population": 67905
+	},
+	{
+		"id": 81,
+		"townName": "Sosnowiec",
+		"priceOfAnApartment": 2900,
+		"population": 205873
+	},
+	{
+		"id": 82,
+		"townName": "Świętochłowice",
+		"priceOfAnApartment": 2580,
+		"population": 50644
+	},
+	{
+		"id": 83,
+		"townName": "Tychy",
+		"priceOfAnApartment": 3702,
+		"population": 128351
+	},
+	{
+		"id": 84,
+		"townName": "Wodzisław Śl.",
+		"priceOfAnApartment": 2250,
+		"population": 48573
+	},
+	{
+		"id": 85,
+		"townName": "Zabrze",
+		"priceOfAnApartment": 2803,
+		"population": 175459
+	},
+	{
+		"id": 86,
+		"townName": "Zawiercie",
+		"priceOfAnApartment": 2190,
+		"population": 50274
+	},
+	{
+		"id": 87,
+		"townName": "Żory",
+		"priceOfAnApartment": 2704,
+		"population": 62013
+	},
+	{
+		"id": 88,
+		"townName": "Żywiec",
+		"priceOfAnApartment": 3200,
+		"population": 31662
+	},
+	{
+		"id": 88,
+		"townName": "Żywiec",
+		"priceOfAnApartment": 3200,
+		"population": 31662
+	},
+	{
+		"id": 89,
+		"townName": "Kielce",
+		"priceOfAnApartment": 4337,
+		"population": 197704
+	},
+	{
+		"id": 90,
+		"townName": "Ostrowiec Św.",
+		"priceOfAnApartment": 2250,
+		"population": 70554
+	},
+	{
+		"id": 91,
+		"townName": "Skarżysko-Kamienna",
+		"priceOfAnApartment": 2800,
+		"population": 46449
+	},
+	{
+		"id": 92,
+		"townName": "Starachowice",
+		"priceOfAnApartment": 2625,
+		"population": 49939
+	},
+	{
+		"id": 93,
+		"townName": "Bartoszyce",
+		"priceOfAnApartment": 2600,
+		"population": 24001
+	},
+	{
+		"id": 94,
+		"townName": "Działdowo",
+		"priceOfAnApartment": 2500,
+		"population": 21355
+	},
+	{
+		"id": 95,
+		"townName": "Elblag",
+		"priceOfAnApartment": 3412,
+		"population": 121191
+	},
+	{
+		"id": 96,
+		"townName": "Ełk",
+		"priceOfAnApartment": 2592,
+		"population": 61074
+	},
+	{
+		"id": 97,
+		"townName": "Giżycko",
+		"priceOfAnApartment": 3000,
+		"population": 29642
+	},
+	{
+		"id": 98,
+		"townName": "Iława",
+		"priceOfAnApartment": 3250,
+		"population": 33108
+	},
+	{
+		"id": 99,
+		"townName": "Lidzbark Warm.",
+		"priceOfAnApartment": 2550,
+		"population": 16040
+	},
+	{
+		"id": 100,
+		"townName": "Mrągowo",
+		"priceOfAnApartment": 3104,
+		"population": 21926
+	},
+	{
+		"id": 101,
+		"townName": "Olecko",
+		"priceOfAnApartment": 2552,
+		"population": 16448
+	},
+	{
+		"id": 102,
+		"townName": "Olsztyn",
+		"priceOfAnApartment": 4428,
+		"population": 172993
+	},
+	{
+		"id": 103,
+		"townName": "Ostróda",
+		"priceOfAnApartment": 3500,
+		"population": 33248
+	},
+	{
+		"id": 104,
+		"townName": "Pasłęk",
+		"priceOfAnApartment": 2740,
+		"population": 12292
+	},
+	{
+		"id": 105,
+		"townName": "Pisz",
+		"priceOfAnApartment": 2758,
+		"population": 19449
+	},
+	{
+		"id": 106,
+		"townName": "Szczytno",
+		"priceOfAnApartment": 2720,
+		"population": 23817
+	},
+	{
+		"id": 107,
+		"townName": "Warszawa",
+		"priceOfAnApartment": 8325,
+		"population": 1753977
+	},
+	{
+		"id": 108,
+		"townName": "Opole",
+		"priceOfAnApartment": 4138,
+		"population": 128043
+	},
+	{
+		"id": 109,
+		"townName": "Rzeszów",
+		"priceOfAnApartment": 4789,
+		"population": 188021
+	},
+	{
+		"id": 110,
+		"townName": "Białystok",
+		"priceOfAnApartment": 4314,
+		"population": 296628
+	},
+	{
+		"id": 111,
+		"townName": "Gdańsk",
+		"priceOfAnApartment": 5675,
+		"population": 463754
+	},
+	{
+		"id": 112,
+		"townName": "Poznań",
+		"priceOfAnApartment": 5434,
+		"population": 540372
+	},
+	{
+		"id": 113,
+		"townName": "Szczecin",
+		"priceOfAnApartment": 4195,
+		"population": 404878
+	}
+]

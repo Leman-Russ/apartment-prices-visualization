@@ -12,7 +12,7 @@ export class DataService {
 
   getData(): Observable<any> {
     if (!this.data) {
-      this.data = this.http.get('assets/r6siege-data.json').publishLast().refCount();
+      this.data = this.http.get('assets/data.json').publishLast().refCount();
     } 
     return this.data;
   }

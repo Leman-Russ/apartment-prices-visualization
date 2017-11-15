@@ -4,7 +4,6 @@ import { Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class CalculatorService {
-  readonly ranks: string[] = ["Unranked", "Copper", "Bronze", "Silver", "Gold", "Platinum", "Diamond"];
 
   constructor(private dataService: DataService) { }
 
@@ -16,30 +15,21 @@ export class CalculatorService {
     return sum / numbers.length;
   }
 
-  getOperatorPickPercentagePerSkillRank(operator: string): Subject<any> {
+  getDataAsArrays(): Subject<any> {
     let result = new BehaviorSubject<any>(null);
     this.dataService.getData().subscribe(data => {
-      let operatorData = data.filter(d => d.operator == operator);    
-      let pickPercentages = this.calculateOperatorPickPercentagePerSkillRank(data, operatorData);
-      result.next([ pickPercentages, this.ranks ]);
+      result.next(this.filterData(data));
     });
     return result;
   }
 
-  calculateOperatorPickPercentagePerSkillRank(data: any, operatorData: any): Array<number> {
-    let pickPercentages = new Array<number>();
-    let numberOfAllPicksInRank = 0;
-    let numberOfOperatorPicksInRank = 0;
-    this.ranks.forEach(rank => {
-      data.filter(d => d.skillrank == rank).forEach(record => {
-        numberOfAllPicksInRank += Number(record.nbpicks);
-      });
-      operatorData.filter(o => o.skillrank == rank).forEach(record => {
-        numberOfOperatorPicksInRank += Number(record.nbpicks);
-      });
-      pickPercentages.push((numberOfOperatorPicksInRank / numberOfAllPicksInRank) * 100);
-      numberOfAllPicksInRank = numberOfOperatorPicksInRank = 0;
+  filterData(data: any): any {
+    let prices = new Array<number>();
+    let numbersOfResidents = new Array<number>();
+    data.forEach(record => {
+      prices.push(record.priceOfAnApartment); 
+      numbersOfResidents.push(record.population);
     });
-    return pickPercentages;
+    return [numbersOfResidents, prices];
   }
 }

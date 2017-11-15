@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { MatButtonModule, MatTooltipModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatButtonModule, MatTooltipModule, MatProgressSpinnerModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './components/app/app.component';
@@ -23,6 +23,7 @@ import { CalculatorService } from './services/calculator/calculator.service'
     MatButtonModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
+    MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [

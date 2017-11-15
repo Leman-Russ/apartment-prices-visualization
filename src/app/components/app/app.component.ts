@@ -20,20 +20,8 @@ export class AppComponent {
     this.setLinearReggressionForValkyrie();
   }
 
-  setLinearReggressionForFuze() {
-    this.setLinearReggressionForOperator("SPETSNAZ-FUZE");
-  }
-
   setLinearReggressionForValkyrie() {
     this.setLinearReggressionForOperator("NAVYSEAL-VALKYRIE");
-  }
-
-  setLinearReggressionForMira() {
-    this.setLinearReggressionForOperator("G.E.O.-MIRA");
-  }
-
-  setLinearReggressionForCaveira() {
-    this.setLinearReggressionForOperator("BOPE-CAVEIRA");
   }
 
   setLinearReggressionForOperator(operator: string) {

@@ -1,10 +1,5 @@
-#operators-div {
-  position: relative;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 75px; 
+#page, #main {
+  height: 100%;
 }
 
 #loader {
@@ -19,17 +14,8 @@
   transform: translate(-50%, -50%) !important;
 }
 
-button {
-  margin: 0px 25px 0px 25px;
-  padding: 0;
-  height: 100px;
-  width: 120px;
-}
-
-.image {
-  height: 100%;
-  width: 100%;
-  display: block;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+.section {
+  float: left; 
+  width: 50%; 
+  height: 44%;
 }

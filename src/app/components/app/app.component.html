@@ -1,18 +1,10 @@
-<mat-spinner *ngIf="!isChartLoaded" id="loader"></mat-spinner>
 <div id="page">
-  <header></header>
+  <app-header></app-header>
   <div id="main">
-    <div class="section">
-      <plotly-chart 
-        [data]="plotlyData" 
-        [layout]="plotlyLayout" 
-        [options]="plotlyOptions" 
-        [displayRawData]="false">
-      </plotly-chart>
-    </div>
-    <div [hidden]="!isChartLoaded" class="section"></div>
-    <div [hidden]="!isChartLoaded" class="section"></div>
-    <div [hidden]="!isChartLoaded" class="section"></div>
+    <app-table [data]="data"></app-table>
+    <div id="top-right"></div>
+    <app-chart [data]="data"></app-chart>
+    <app-statistics [data]="data"></app-statistics>
   </div>
 </div>
 

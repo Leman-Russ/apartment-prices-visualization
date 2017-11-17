@@ -18,7 +18,7 @@ export class ChartComponent extends SubComponent {
     super();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges) {
     super.ngOnChanges(changes);
     if (changes["data"].currentValue) {
       this.setLinearReggression();
@@ -30,7 +30,7 @@ export class ChartComponent extends SubComponent {
   }
 
   setPlotlyChart(data: any) {
-    let reggressionLine = this.calculatorService.calculateReggressionLine(data);
+    let reggressionLine = this.calculatorService.getLinearReggressionLine(data);
     this.plotlyData = [{
       x: data.numbersOfResidents,
       y: data.prices,
@@ -48,7 +48,6 @@ export class ChartComponent extends SubComponent {
     this.plotlyLayout = {
       margin: { t: 0 }    
     };
-    this.plotlyChart.ngOnInit();
   }
 
 }

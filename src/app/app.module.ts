@@ -10,7 +10,6 @@ import { PlotlyChartComponent } from './components/plotly-chart/plotly-chart.com
 import { TableComponent } from './components/table/table.component'
 import { ChartComponent } from './components/chart/chart.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
-import { SubComponent } from './components/sub/sub.component'
 
 import { DataService } from './services/data/data.service';
 import { CalculatorService } from './services/calculator/calculator.service';
@@ -22,8 +21,7 @@ import { CalculatorService } from './services/calculator/calculator.service';
     HeaderComponent,
     TableComponent,
     ChartComponent,
-    StatisticsComponent,
-    SubComponent
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,

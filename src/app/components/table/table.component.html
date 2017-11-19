@@ -1,5 +1,6 @@
 <div id="table-container">
-  <div class="example-container mat-elevation-z8">
+
+  <div class="table-data-container mat-elevation-z8">
     <mat-table #table [dataSource]="dataSource" matSort>
   
       <ng-container matColumnDef="id">
@@ -8,12 +9,12 @@
       </ng-container>
   
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> City </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.townName}} </mat-cell>
       </ng-container>
   
       <ng-container matColumnDef="price">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Price (zł/m<sup>2</sup>) </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.priceOfAnApartment}} </mat-cell>
       </ng-container>
   
@@ -26,4 +27,25 @@
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
   </div>
+
+  <form #form="ngForm" class="table-form">
+    <mat-form-field>
+      <input matInput [(ngModel)]="formName" name="formName" placeholder="City">
+    </mat-form-field>
+    <mat-form-field >
+      <input required type="number" matInput [(ngModel)]="formPopulation" name="formPopulation" placeholder="Population">
+    </mat-form-field>
+    <mat-form-field>
+      <input required type="number" matInput [(ngModel)]="formPrice" name="formPrice" placeholder="Price">
+    </mat-form-field>
+    <button mat-raised-button [disabled]="!form.form.valid" (click)="addNewRecord()" color="primary">
+      <span> Add </span>
+      <mat-icon> add </mat-icon> 
+    </button>     
+    <button mat-raised-button (click)="resetData()" color="primary">
+      <span> Reset </span>
+      <mat-icon> refresh </mat-icon> 
+    </button>    
+  </form>
+
 </div>

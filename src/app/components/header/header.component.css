@@ -28,3 +28,8 @@
   color: royalblue;
   transform: translate(-50%, -50%);
 }
+
+#upload-button {
+  float: right;
+  margin: 5px 10px 0px 0px;
+}

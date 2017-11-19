@@ -1,9 +1,22 @@
 <div id="statistics-container">
-  Minimum: {{ minimumPrice }} zł<br>
-  Maximum: {{ maximumPrice }} zł<br>
-  Median: {{ medianPrice }} zł<br>
-  Standard Deviation: {{ standardDeviationForPrice }} zł<br>
-  Expected Value: {{ expectedValueForPrice }} zł<br>
-  Pearson Correlation Coefficient: {{ pearsonCorrelationCoefficient }}<br>
-  Linear Reggression Formula: <i>{{ linearReggressionFormula }}</i>
+  <div class="statistics-data-container mat-elevation-z8">
+    <mat-grid-list cols="2" rowHeight="20:2">
+      <mat-grid-tile>Minimum:</mat-grid-tile><mat-grid-tile>{{ minimum }}</mat-grid-tile>
+      <mat-grid-tile>Maximum:</mat-grid-tile><mat-grid-tile>{{ maximum }}</mat-grid-tile>
+      <mat-grid-tile>Median:</mat-grid-tile><mat-grid-tile>{{ median }}</mat-grid-tile>
+      <mat-grid-tile>Q1:</mat-grid-tile><mat-grid-tile>{{ firstQuartile }}</mat-grid-tile>
+      <mat-grid-tile>Q3:</mat-grid-tile><mat-grid-tile>{{ thirdQuartile }}</mat-grid-tile>
+      <mat-grid-tile>IQR:</mat-grid-tile><mat-grid-tile>{{ interquartileRange }}</mat-grid-tile>
+      <mat-grid-tile>Standard Deviation:</mat-grid-tile><mat-grid-tile>{{ standardDeviation }}</mat-grid-tile>
+      <mat-grid-tile>Expected Value:</mat-grid-tile><mat-grid-tile>{{ expectedValue }}</mat-grid-tile>
+      <mat-grid-tile>Pearson Correlation Coefficient:</mat-grid-tile><mat-grid-tile>{{ pearsonCorrelationCoefficient }}</mat-grid-tile>
+      <mat-grid-tile>Linear Reggression Formula:</mat-grid-tile><mat-grid-tile><i>{{ linearReggressionFormula }}</i></mat-grid-tile>
+    </mat-grid-list>  
+  </div>  
+  <button mat-raised-button id="statistics-button" (click)="changeConsideredAttribute()" color="primary">
+    <span *ngIf="consideredAttributeName == 'price'"> Show Population Stats </span>
+    <mat-icon *ngIf="consideredAttributeName == 'price'"> accessibility </mat-icon>  
+    <span *ngIf="consideredAttributeName == 'population'"> Show Price Stats </span>
+    <mat-icon *ngIf="consideredAttributeName == 'population'"> attach_money </mat-icon>  
+  </button>
 </div>

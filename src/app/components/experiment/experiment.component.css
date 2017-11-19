@@ -1,23 +1,29 @@
-#statistics-container {
+#experiment-container {
   float: left; 
   width: 40%; 
-  height: 50%;
+  height: 38%;
 }
 
-.statistics-data-container {
-  height: 81%;
+.experiment-data-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 77%;
   min-width: 300px;
   margin: 0px 10px 0px 10px;
 }
 
-.mat-grid-tile {
-  border: solid 1px rgba(0, 0, 0, .12);
+.mat-table {
+  overflow: auto;
+  max-height: 100%;
 }
 
-#statistics-button {
+.mat-header-row {
+  display: fixed;
+}
+
+#generate-data-button {
   left: 50%;
   -ms-transform: translate(-50%, 35%) !important; 
   -webkit-transform: translate(-50%, 35%) !important; 
   transform: translate(-50%, 35%) !important;
 }
-

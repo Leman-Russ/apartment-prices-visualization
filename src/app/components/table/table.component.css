@@ -4,12 +4,12 @@
   height: 38%;
 }
 
-.example-container {
+.table-data-container {
   display: flex;
   flex-direction: column;
-  max-height: 97%;
+  max-height: 77%;
   min-width: 300px;
-  margin: 0px 10px 0px 10px;
+  margin: 0px 4px 0px 10px;
 }
 
 .mat-table {
@@ -19,4 +19,8 @@
 
 .mat-header-row {
   display: fixed;
+}
+
+.table-form {
+  margin: 2px 0px 0px 14px;
 }

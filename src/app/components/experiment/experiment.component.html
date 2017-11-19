@@ -1,0 +1,23 @@
+<div id="experiment-container">
+  <div class="experiment-data-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="population">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Population </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.population}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="calculatedPrice">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Calculated price (zł/m<sup>2</sup>) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.calculatedPrice}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  <button mat-raised-button id="generate-data-button" (click)="generateNewExperimentalData()" color="primary">
+    <span> Generate New Experimental Data </span>
+    <mat-icon> autorenew </mat-icon>  
+  </button>
+</div>

@@ -3,6 +3,11 @@
     <mat-icon id="logo">home</mat-icon>
   </div>
   <div id="right-side">
-    Apartment Prices Per City
+    Apartment prices per city in Poland
+    <button id="upload-button" type="button" mat-raised-button (click)="fileInput.click()" color="primary">
+      <span> Upload .json file </span>
+      <mat-icon> file_upload </mat-icon> 
+    </button>
+    <input hidden type="file" accept=".json" #fileInput (change)="onFileChange($event)" />
   </div>
 </div>

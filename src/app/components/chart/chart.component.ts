@@ -18,30 +18,37 @@ export class ChartComponent extends SubComponent {
     super();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    super.ngOnChanges(changes);
-    if (changes["data"].currentValue) {
-      this.setLinearReggression();
-    }
+  onDataChange() {
+    this.setLinearReggressionChart();
   }
 
-  setLinearReggression() {
-    this.setPlotlyChart(this.calculatorService.getDataAsArrays(this.data)); 
+  setLinearReggressionChart() {
+    this.setPlotlyChart(this.calculatorService.getProcessedData(this.data)); 
   }
 
   setPlotlyChart(data: any) {
-    let reggressionLine = this.calculatorService.getLinearReggressionLine(data);
+    let reggressionLine = this.calculatorService.getLinearReggressionLine(data),
+        standardAndDistantPoints = this.calculatorService.getStandardAndDistantPoints(data, "price"),  
+        standardPointsArrays = this.calculatorService.getProcessedDataAsArrays(standardAndDistantPoints.standardPoints),
+        distantPointsArrays = this.calculatorService.getProcessedDataAsArrays(standardAndDistantPoints.distantPoints);
     this.plotlyData = [{
-      x: data.numbersOfResidents,
-      y: data.prices,
+      x: standardPointsArrays.populations,
+      y: standardPointsArrays.prices,
       name: 'Price',
       mode: 'markers',
       type: 'Scatter'    
     },
     {
-      x: [Math.min(...data.numbersOfResidents), Math.max(...data.numbersOfResidents)],
+      x: distantPointsArrays.populations,
+      y: distantPointsArrays.prices,
+      name: 'Price (DP)',
+      mode: 'markers',
+      type: 'Scatter'   
+    },
+    {
+      x: [this.calculatorService.getMin(data, "population"), this.calculatorService.getMax(data, "population")],
       y: reggressionLine,
-      name: 'Reggression',
+      name: 'Reg',
       mode: 'lines',
       type: 'Lines' 
     }];

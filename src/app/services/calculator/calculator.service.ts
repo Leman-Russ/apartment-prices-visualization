@@ -3,156 +3,175 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CalculatorService {
 
-  getAverage(data: number[]): number {
+  getAverage(data: any[], prop: string): number {
     let sum = 0;
-    data.forEach(number => {
-      sum += number;
+    data.forEach(element => {
+      sum += element[prop];
     });
     return sum / data.length;
   }
 
-  getVariance(data: number[]): number {  
-    let average = this.getAverage(data);
-    let variance = 0;
-    data.forEach(number => {
-      variance += Math.pow((number - average), 2);
+  getVariance(data: any[], prop: string): number {  
+    let average = this.getAverage(data, prop),
+        variance = 0;
+    data.forEach(element => {
+      variance += Math.pow((element[prop] - average), 2);
     });
     return variance / data.length;
   }
 
-  getMin(data: number[]): number {
-    let min = data[0];
+  getMin(data: any[], prop: string): number {
+    let min = data[0][prop];
     for (let i = 1, len = data.length; i < len; i++) {
-      if (data[i] < min) {
-        min = data[i];
+      if (data[i][prop] < min) {
+        min = data[i][prop];
       }
     }
     return min;
   }
 
-  getMax(data: number[]): number {
-    let max = data[0];
+  getMax(data: any[], prop: string): number {
+    let max = data[0][prop];
     for (let i = 1, len = data.length; i < len; i++) {
-      if (data[i] > max) {
-        max = data[i];
+      if (data[i][prop] > max) {
+        max = data[i][prop];
       }
     }
     return max;
   }
 
-  getMedian(data: number[]): number {
-    data.sort((a, b) => a - b);
+  getMedian(data: number[], prop: string): any {
+    data.sort((a, b) => a[prop] - b[prop]);
+    let halfLength = data.length / 2,
+        index = 0;
     if (data.length % 2 == 0) {
-      return (data[data.length / 2] + data[(data.length / 2) + 1]) / 2;
+      index = (halfLength + halfLength - 1) / 2; 
+      return { index: index, value: (data[halfLength][prop] + data[halfLength - 1][prop]) / 2 };
     } else {
-      return data[Math.ceil(data.length / 2)];
+      index = Math.floor(halfLength);
+      return { index: index, value: data[index][prop] };
     }
   }
 
-  getStandardDeviation(data: number[]): string {
-    return Math.sqrt(this.getVariance(data)).toFixed(4);
+  getQuartileStats(data: any[], prop: string): any {
+    let median = this.getMedian(data, prop),
+        firstHalf = new Array<any>(),
+        secondHalf = new Array<any>();
+    for (let i = 0, len = data.length; i < len; i++ ) {
+      if (i <= median.index) {
+        firstHalf.push(data[i]);
+      }
+      if (i >= median.index) {
+        secondHalf.push(data[i]);
+      }
+    }
+    let q1 = this.getMedian(firstHalf, prop).value,
+        q3 = this.getMedian(secondHalf, prop).value;
+    return { q1: q1, q3: q3, iqr: q3 - q1 }
   }
 
-  getExpectedValue(data: number[]): string {
-    let result = this.getOccurrencesInArray(data);
-    let expectedValue = 0;
+  getStandardAndDistantPoints(data: any[], prop: string): any {
+    let quartileStats = this.getQuartileStats(data, prop),
+        standardPoints = new Array<any>(),
+        distantPoints = new Array<any>();
+    for (let i = 0, len = data.length; i < len; i++ ) {
+      if (data[i][prop] < quartileStats.q1 - (1.5 * quartileStats.iqr) || data[i][prop] > quartileStats.q3 + (1.5 * quartileStats.iqr)) {
+        distantPoints.push(data[i]);
+      } else {
+        standardPoints.push(data[i]);
+      }
+    }
+    return { standardPoints, distantPoints }; 
+  }
+
+  getStandardDeviation(data: any[], prop: string): string {
+    return Math.sqrt(this.getVariance(data, prop)).toFixed(4);
+  }
+
+  getExpectedValue(data: number[], prop: string): string {
+    let result = this.getOccurrencesInArray(data, prop),
+        expectedValue = 0;
     for (let i = 0, len = result.numbers.length; i < len; i++) {
       expectedValue += result.numbers[i] * result.occurrences[i];
     }
     return (expectedValue / data.length).toFixed(4);
   }
 
-  getOccurrencesInArray(data: number[]): any {
-    var a = [], b = [], prev;
-    data.sort();
-    for (var i = 0, len = data.length; i < len; i++ ) {
-      if (data[i] !== prev) {
-        a.push(data[i]);
+  getOccurrencesInArray(data: any[], prop: string): any {
+    let a = [], b = [], prev;
+    data.sort((a, b) => a[prop] - b[prop]);
+    for (let i = 0, len = data.length; i < len; i++ ) {
+      if (data[i][prop] !== prev) {
+        a.push(data[i][prop]);
         b.push(1);
       } else {
         b[b.length - 1]++;
       }
-      prev = data[i];
+      prev = data[i][prop];
     }
     return { numbers: a, occurrences: b };
   }
 
   getPearsonCorrelationCoefficient(data: any): string {
-    console.log(data);
-    let avgX = this.getAverage(data.numbersOfResidents);
-    let avgY = this.getAverage(data.prices);
+    let avgX = this.getAverage(data, "population"),
+        avgY = this.getAverage(data, "price");
 
-    let diffX = new Array<number>();
-    data.numbersOfResidents.forEach(x => {
-      diffX .push(x - avgX); 
-    });
-
-    let diffY = new Array<number>();
-    data.prices.forEach(y => {
-      diffY.push(y - avgY); 
-    });
-
-    let diffXDiffY = 0;
-    for (var i = 0, len = diffX.length; i < len; i++ ) {
+    let diffX = new Array<number>(), diffY = new Array<number>(), diffXDiffY = 0;
+    for (let i = 0, len = data.length; i < len; i++ ) {
+      diffX.push(data[i]["population"] - avgX);
+      diffY.push(data[i]["price"] - avgY);
       diffXDiffY += diffX[i] * diffY[i];
     }
-
-    let diffX2 = 0;
-    diffX.forEach(x => {
-      diffX2 += x * x;
-    });
-
-    let diffY2 = 0;
-    diffY.forEach(y => {
-      diffY2 += y * y;
-    });
+    
+    let diffX2 = 0, diffY2 = 0;
+    for (let i = 0, len = diffX.length; i < len; i++ ) {
+      diffX2 += diffX[i] * diffX[i];
+      diffY2 += diffY[i] * diffY[i];
+    }
 
     return (diffXDiffY / Math.sqrt(diffX2 * diffY2)).toFixed(4);
   }
 
-  getLinearReggressionAttributes(data: any) {
-    let x = 0;
-    let x2 = 0
-    data.numbersOfResidents.forEach(element => {
-      x += element;
-      x2 += element * element;
-    });
-    x = x / data.numbersOfResidents.length;
-    x2 = x2 / data.numbersOfResidents.length;
-
-    let y = 0;
-    data.prices.forEach(element => {
-      y += element;
-    });
-    y = y / data.prices.length;
-
-    let xy = 0;
-    for (var index = 0; index < data.numbersOfResidents.length; index++) {
-      xy += data.numbersOfResidents[index] * data.prices[index];
+  getLinearReggressionAttributes(data: any): any {
+    let x = 0, x2 = 0, y = 0, xy = 0;
+    for (let i = 0; i < data.length; i++) {
+      x += data[i]["population"];
+      x2 += data[i]["population"] * data[i]["population"];
+      y += data[i]["price"];
+      xy += data[i]["population"] * data[i]["price"];
     }
-    xy = xy / data.numbersOfResidents.length;
+    x = x / data.length;
+    x2 = x2 / data.length;
+    y = y / data.length;
+    xy = xy / data.length;
 
-    let a = (xy - (x * y)) / (x2 - (x * x));
-    let b = y - (a * x);
-
+    let a = (xy - (x * y)) / (x2 - (x * x)),
+        b = y - (a * x); 
     return { a, b }
   }
 
   getLinearReggressionLine(data: any): any {
     let linearReggressionAttributes = this.getLinearReggressionAttributes(data);
-    let firstLinePoint = linearReggressionAttributes.a * this.getMin(data.numbersOfResidents) + linearReggressionAttributes.b;
-    let secondLinePoint = linearReggressionAttributes.a * this.getMax(data.numbersOfResidents) + linearReggressionAttributes.b;
+    let firstLinePoint = linearReggressionAttributes.a * this.getMin(data, "population") + linearReggressionAttributes.b;
+    let secondLinePoint = linearReggressionAttributes.a * this.getMax(data, "population") + linearReggressionAttributes.b;
     return [firstLinePoint, secondLinePoint];
   }
 
-  getDataAsArrays(rawData: any): any {
-    let numbersOfResidents = new Array<number>();
-    let prices = new Array<number>();
+  getProcessedData(rawData: any): any {
+    let processedData = new Array<any>();
     rawData.forEach(record => {
-      prices.push(record.priceOfAnApartment); 
-      numbersOfResidents.push(record.population);
+      processedData.push({ population: record.population, price: record.priceOfAnApartment })
     });
-    return { numbersOfResidents, prices };
+    return processedData;
+  }
+
+  getProcessedDataAsArrays(data: any): any {
+    let populations = new Array<number>(), prices = new Array<number>();
+    data.forEach(element => {
+      populations.push(element["population"]);
+      prices.push(element["price"]);
+    });
+    return { populations, prices };
   }
 
 }

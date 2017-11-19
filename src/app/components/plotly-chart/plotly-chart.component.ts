@@ -12,16 +12,9 @@ export class PlotlyChartComponent implements OnChanges {
   @Input() displayRawData: boolean;
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes["data"]) {
-      this.data = changes["data"].currentValue;
-    } else if (changes["layout"]) {
-      this.layout = changes["layout"].currentValue;
-    } else if (changes["options"]) {
-      this.options = changes["options"].currentValue;
-    } else if (changes["displayRawData"]) {
-      this.displayRawData = changes["displayRawData"].currentValue;
+    if (this.data !== undefined) {
+      Plotly.newPlot('myPlotlyDiv', { data: this.data, layout: this.layout, options: this.options });
     }
-    Plotly.newPlot('myPlotlyDiv', { data: this.data, layout: this.layout, options: this.options });
   }
 
 }

@@ -1,10 +1,10 @@
 <div id="page">
-  <app-header></app-header>
+  <app-header (fileChange)="fileChange($event)"></app-header>
   <div id="main">
-    <app-table [data]="data"></app-table>
-    <div id="top-right"></div>
+    <app-table *ngIf="isPageActive" [data]="data" (dataChange)="dataChange($event)" (dataReset)="dataReset($event)"></app-table>
+    <app-experiment *ngIf="isPageActive" [data]="data"></app-experiment>
     <app-chart [data]="data"></app-chart>
-    <app-statistics [data]="data"></app-statistics>
+    <app-statistics *ngIf="isPageActive" [data]="data"></app-statistics>
   </div>
 </div>
 

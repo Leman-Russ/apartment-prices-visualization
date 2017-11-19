@@ -13,10 +13,3 @@
   -webkit-transform: translate(-50%, -50%) !important; 
   transform: translate(-50%, -50%) !important;
 }
-
-#top-right {
-  float: left; 
-  width: 40%; 
-  height: 38%;
-  background-color: red;
-}
